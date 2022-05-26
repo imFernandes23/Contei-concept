@@ -1,0 +1,59 @@
+@charset "UTF-8";
+@font-face {
+    font-family: burbank;
+    src: url('../fonts/Burbank Big Condensed Black.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: burbank,Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+main{
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+main .hexagonos{
+    display: flex;
+}
+main .hexagonos.bot{
+    transform: translateY(-45px);
+}
+
+main .hexagonos .hexa{
+    position: relative;
+    width: 200px;
+    height: 250px;
+    margin: 0 10px;
+    clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+    background: deeppink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .5s;
+}
+
+main .hexagonos .hexa ion-icon{
+    font-size: 70px;
+}
+main .hexagonos .hexa a{
+    font-size: 2em;
+    margin-top: 10px;
+    text-decoration: none;
+    color: black;
+}
