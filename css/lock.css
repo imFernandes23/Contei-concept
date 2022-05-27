@@ -35,15 +35,27 @@ header > a img{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
+main{
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+
+}
 
 .vista{
     position: relative;
-    width: 400px;
-    height: 400px;
-    top: 50%;
-    left: 50%;
-    background: rgba(255,255,255,0.1);
+    width:300px;
+    height: 500px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgba(255,255,255,0.1);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -54,31 +66,60 @@ header > a img{
     border-left: 1px solid rgba(255,255,255,0.5);
     backdrop-filter: blur(5px);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transform: translate(-50%,50%);
     transition: 0.5s;
+    z-index: 2;
+}
+.circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    top: 4%;
+    left: 5%;
+    border-radius: 50%;
+    transition: 2s;
     z-index: 1;
-
-
 }
 .vista > img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transition: 2s;
+    z-index: 2;
+}
+
+.vista > h2{
     position: relative;
-    width: 400px;
-    height: 400px;
-    transform: translateY(50px);
+    transition: 2s;
+    transform: translateY(400px);
+    z-index: 3;
+    font-size: 3em;
 }
 
 .vista > p {
     position: relative;
     transform: translateY(300px);
-    transition: .5s;
+    transition: 1s;
+    z-index: 4;
+    font-size: 1.2em;
+    text-align: center;
 }
 
-
-body > main >.vista:hover{
+.vista:hover .circle{
+    transform: scale(100);
+    transition: 2s;
+}
+.vista:hover > img{
+    transition: 2s;
+    transform: scale(0.3);
+    top: -10%;
+    left: 50%;
+}
+.vista:hover > h2{
     transition: 0.5s;
-    position: relative;
-    height: 500px;
-    width: 500px;
-
-    background-color: white;
+    transform: translateY(-100px);
+}
+.vista:hover > p{
+    transition: .5s;
+    transform: translateY(-100px);
 }
