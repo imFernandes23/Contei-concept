@@ -50,7 +50,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 100vh;
+    min-height: 100vh;
 }
 main{
     width:500px;
