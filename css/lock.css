@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@font-face {
+    font-family: burbank;
+    src: url('../fonts/Burbank Big Condensed Black.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: burbank,Arial, Helvetica, sans-serif;
+}
+
+header{
+    position: relative;
+}
+header > a img{
+    position: relative;
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    margin: 30px;
+    background: rgba(255,255,255,0.1);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 20px;
+    overflow: hidden;
+    border-top-left-radius: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.vista{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 20px;
+    border-top-left-radius: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transform: translate(-50%,50%);
+    transition: 0.5s;
+    z-index: 1;
+
+
+}
+.vista > img{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    transform: translateY(50px);
+}
+
+.vista > p {
+    position: relative;
+    transform: translateY(300px);
+    transition: .5s;
+}
+
+
+body > main >.vista:hover{
+    transition: 0.5s;
+    position: relative;
+    height: 500px;
+    width: 500px;
+
+    background-color: white;
+}
