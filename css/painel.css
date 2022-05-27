@@ -50,7 +50,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    max-height: 100vh;
 }
 main{
     width: 950px;
@@ -71,12 +71,12 @@ main .hexagonos.bot{
 
 main .hexagonos .hexa{
     position: relative;
-    width: 150px;
-    height: 180px;
+    width: 140px;
+    height: 170px;
     margin: 0 10px;
     clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
     display: flex;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.2);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -124,7 +124,7 @@ main .hexagonos .hexa:hover a{
 
 footer .conect{
     position: absolute;
-    right: 30px;
+    right: 5%;
     bottom: 30px;
     z-index: 4;
     display: flex;
