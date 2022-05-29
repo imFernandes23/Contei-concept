@@ -78,11 +78,11 @@ main{
     position: absolute;
     width: 10px;
     height: 10px;
-
-    background: transparent;
+    background-image: radial-gradient(var(--pri3),var(--pri4), var(--pri5));
     border-radius: 50%;
     top: 20%;
     left: 5%;
+    transform: scale(0);
     transition: .6s;
 }
 
@@ -101,6 +101,6 @@ main{
 .modulos > a:hover > .circle{
     background-image: radial-gradient(var(--pri3),var(--pri4), var(--pri5));
     transition: .7s;
-    transform: scale(100);
+    transform: scale(70);
     z-index: 1;
 }

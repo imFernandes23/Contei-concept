@@ -162,13 +162,13 @@ ul li:nth-child(3):hover a{
 }
 
 ul li:nth-child(1):hover .circle{
-    transform: scale(100);
+    transform: scale(90);
 }
 ul li:nth-child(2):hover .circle{
-    transform: scale(100);
+    transform: scale(90);
 }
 ul li:nth-child(3):hover .circle{
-    transform: scale(100);
+    transform: scale(90);
 }
 
 
