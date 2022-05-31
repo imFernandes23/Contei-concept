@@ -19,7 +19,7 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quas similique temporibus nemo, harum suscipit deserunt accusamus nihil perspiciatis earum esse illo, minus, cupiditate qui. Molestiae vitae ab quae amet.</p>
 
         <div id="quadro">
-            <h2 id="demo">Quadro</h2>
+            <h2 id="gambiarra">Quadro</h2>
                 <div>
             <span style="display : inline-block">
             Tamanho da Caneta <br> <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
@@ -56,7 +56,7 @@
 
     <script type="text/javascript" defer="">
         var canvas = new handwriting.Canvas(document.getElementById('canvas'), 3);
-        var width = document.getElementById("demo").clientWidth
+        var width = document.getElementById("gambiarra").clientWidth
         canvas.cxt.canvas.width  = width < 200 ? width : 200;
         canvas.cxt.canvas.height = width < 300 ? width : 300;
         canvas.setCallBack(function(data, err) {
