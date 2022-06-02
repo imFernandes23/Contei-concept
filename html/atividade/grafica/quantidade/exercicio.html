@@ -5,18 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>demo</title>
+    <link rel="stylesheet" href="../../../../css/questôes.css">
+    <link rel="stylesheet" href="../../../../css/backgound.css">
 </head>
-<body>  
+<body class="gradientAnimated">  
 
+    <header>
+        <a class="button" href="../../../cards-grafica.html">
+            <img src="../../../../icons/arrowback_111142.png" alt="">
+        </a>
 
+        <h2 id="questNumber">Questão 1/10</h2>
+
+    </header>
     <main>
-        <div id="question">
-            <a class="button" href="index.html">
-                <img src="../icons/arrowback_111142.png" alt="">
-            </a>
-        </div>
+        <div class="game">  <!-- substitutuir pelo iframe do game-->
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quas similique temporibus nemo, harum suscipit deserunt accusamus nihil perspiciatis earum esse illo, minus, cupiditate qui. Molestiae vitae ab quae amet.</p>
+            <iframe src="../../../cards-grafica.html" frameborder="0" width="550px" height="550px"></iframe>
+
+        </div>
+            
+        
+
+        <div class='help'>
+            <div class="circle"></div>
+            <ion-icon class="helpIcon" name="help"></ion-icon>
+            <h2>Ajuda</h2>
+            <p class="questHelp"> 
+                Ajude a abelha a coletar o polem de todas as flores, use as teclas direcionais &larr;, &uarr;, &rarr; e &darr; para mover a abelha, e depois escreva o número de flores que você visitou no quadro à direita.</p>
+        </div>
 
         <div id="quadro">
             <h2 id="gambiarra">Quadro</h2>
@@ -24,10 +41,10 @@
             <span style="display : inline-block">
             Tamanho da Caneta <br> <span id="lineWidth">3</span><input type="range" id="penSize" min="1" max="30" value="3">
             <br>
-            <canvas id="canvas" width="300" height="600" style="border: 2px solid; cursor: crosshair;"></canvas>
+            <canvas id="canvas" width="350" height="600" style="border: 2px solid; cursor: crosshair;"></canvas>
             <br>
             <form>
-                Linguagen:
+                Idioma:
                 <select id="language">
                 <option value="pt-BR">Português-Br</option>
                 <option value="en">English</option>
@@ -35,22 +52,25 @@
                 </select>
             </form>
             <br>
-            <button onclick="canvas.erase()
-                            clean();">Limpar</button>
-            <button onclick="
-                var e = document.getElementById('language');
-                canvas.setOptions({language: e.options[e.selectedIndex].value,
-                numOfReturn : 1});
-                canvas.recognize();
-            ">Responder</button>
-            <br>
-            <button onclick="canvas.undo()">Desfazer</button>
-            <button onclick="canvas.redo()">Refazer</button>
+            <div>
+                <button class="btn" onclick="canvas.erase()
+                                clean();">Limpar</button>
+                <button class="btn"  onclick="
+                    var e = document.getElementById('language');
+                    canvas.setOptions({language: e.options[e.selectedIndex].value,
+                    numOfReturn : 1});
+                    canvas.recognize();
+                ">Responder</button>
+                <button class="btn"  onclick="canvas.undo()">Desfazer</button>
+                <button class="btn"  onclick="canvas.redo()">Refazer</button>
+            </div>
             <br>
             Resultado: <span id="result"></span>
             </span>
         </div>
     </main>
+
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 
     <script type="text/javascript" src="../../../../script/handwriting.canvas.js"></script>
 
