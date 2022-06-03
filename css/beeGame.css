@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.gameBackground{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 550px;
+    padding: 0;
+    background-image: linear-gradient(0deg,rgb(132, 132, 188),rgb(85, 85, 181));
+    text-align: center;
+    font-size: 40px;
+}
+#abelha{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-image: linear-gradient(180deg,rgb(225, 225, 68), rgb(82, 45, 45));
+    border-radius: 15px;
+    z-index: 90;
+    transform: translate(50%,50%);
+    transition: 0.2s;
+}

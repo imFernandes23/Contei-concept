@@ -57,7 +57,7 @@ main{
     position: relative;
     width: 550px;
     height: 550px;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     margin: 10px;
     border-radius: 20px;
 }
