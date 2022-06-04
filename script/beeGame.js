@@ -16,7 +16,7 @@ function inicial(){
     dy = 0;
     px = 20;
     py = 20;
-    vel = 5;
+    vel = 7;
     obj = document.getElementById('abelha')
     document.addEventListener("keydown",teclaDw);
     
