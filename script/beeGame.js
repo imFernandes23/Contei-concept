@@ -8,19 +8,19 @@ var obj;
 var tmp;
 var tmp2;
 var numFlower = parseInt(Math.random() * 10);
+var posi = []
 
 
 function inicial(){
     dx = 0;
     dy = 0;
-    px = 0;
-    py = 0;
-    vel = 3;
+    px = 20;
+    py = 20;
+    vel = 5;
     obj = document.getElementById('abelha')
     document.addEventListener("keydown",teclaDw);
     
-    tmp=setInterval(enterFrame,20);
-    cretePosition();
+    tmp=setInterval(enterFrame,60);
 }
 
 
@@ -54,54 +54,77 @@ function teclaUp(event){
 
 function enterFrame(){
 
-    if(px >= -20 && px <= 490){
+    if(px >= 0 && px <= 510){
         px+=dx*vel;
-    }else if(px < -20 ){
-        px = -20
+    }else if(px < 0 ){
+        px = 0
     }else{
-        px = 490
+        px = 510
     }
-    if(py >= -20 && py <= 490){
+    if(py >= 0 && py <= 510){
         py+=dy*vel;
-    }else if(py < -20 ){
-        py = -20
+    }else if(py < 0 ){
+        py = 0
     }else{
-        py = 490
+        py = 510
     }
     
     obj.style.left = px+"px"
     obj.style.top = py+"px"
+
+    polenRemove();
 }
 
 window.addEventListener('load', inicial);
 
 /*flores randomicas*/
 
-function cretePosition(){
-    var positions = [];
-    for(let i = 0; i <= numFlower; i++){
-        positions[i] = [(parseInt(Math.random()*480)),(parseInt(Math.random()*510))]
-    }
-}
-
-
 function createFlowers(){
-    var posi = []
+    
+    var x = parseInt((480/(numFlower+1))/2)
+    var y = 0
+    
+    var gamePlay = document.getElementById('gP');
+    gamePlay.remove()
 
-    for(var i = 0; i <= numFlower; i++){
-        let gameBack = document.getElementById('gameBack');
+
+    for(let i = 0; i <= numFlower; i++){
+        let gameBack = document.getElementById('gameBack')
         let newFlower = document.createElement('div');
-        newFlower.classList.add('flower' , 'nVisited');
-        gameBack.appendChild(newFlower);
+        newFlower.classList.add('flower' , 'nVisited' , i)
+        gameBack.appendChild(newFlower)
 
-        var x = (parseInt(Math.random()*480));
-        var y = (parseInt(Math.random()*(510-260)+260));
+        /*x = (parseInt(Math.random()*480));*/
+        y = (parseInt(Math.random()*(510-200)+200));
 
         newFlower.style.left = x +'px';
         newFlower.style.top = y +'px';
         
-        posi[i] = [x,y]
-    }
+        posi[i] = [x+30,y+20];
 
+        x = x + parseInt(480/(numFlower+1));
+    }
+}
+
+function dist(Ax, Ay, Bx, By){
+    let distancia = Math.sqrt( (Ax - Bx) ** 2 + (Ay - By) ** 2 );
+    return distancia;
+}
+
+console.log(posi)
+
+function polenRemove(){
+    var test =  document.getElementsByClassName('flower');
+    for(let i = 0; i<= numFlower; i++){
+        let cpx = px + 20;
+        let cpy = py + 20;
+        let fpx = posi[i][0];
+        let fpy = posi[i][1];
+
+        if(dist(cpx,cpy,fpx,fpy) < 20 ){
+            test[i].classList.remove('nVisited')
+        }
+    }
+    
 }
 
