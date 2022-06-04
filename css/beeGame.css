@@ -15,6 +15,7 @@
     background-image: linear-gradient(0deg,rgb(132, 132, 188),rgb(85, 85, 181));
     text-align: center;
     font-size: 40px;
+    overflow: hidden;
 }
 #abelha{
     position: absolute;
@@ -25,4 +26,54 @@
     z-index: 90;
     transform: translate(50%,50%);
     transition: 0.2s;
+}
+
+.flower{
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background-image: radial-gradient( rgba(252, 16, 16, 0.712) 1%,pink );
+    border-radius: 20px;
+    z-index: 3;
+
+}
+
+.flower.nVisited::before{
+    display: block;
+    content:'';
+    position: absolute;
+    width: 40px;
+    height: 10px;
+    background: #ffff00b2;
+    transform: translate(10px, -15px);
+    border-radius: 45px 45px 0 0;
+    box-shadow: 0 0 10px yellow;
+    animation: animateFlower 5s linear infinite;
+    z-index: 2;
+    transition: .5s;
+}
+
+.flower::after{
+    display: block;
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 550px;
+    background: greenyellow;
+    transform: translate(27px,40px);
+    z-index: 1;
+}
+@keyframes animateFlower {
+    0%{
+        transform: translate(10px,-13px);
+        box-shadow: 0 0 10px yellow;
+    }
+    50%{
+        transform: translate(10px,-15px);
+        box-shadow: 0 0 5px yellow;
+    }
+    100%{
+        transform: translate(10px,-13px);
+        box-shadow: 0 0 10px yellow;
+    }
 }

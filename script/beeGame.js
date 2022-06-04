@@ -7,6 +7,8 @@ var vel;
 var obj;
 var tmp;
 var tmp2;
+var numFlower = parseInt(Math.random() * 10);
+
 
 function inicial(){
     dx = 0;
@@ -18,7 +20,7 @@ function inicial(){
     document.addEventListener("keydown",teclaDw);
     
     tmp=setInterval(enterFrame,20);
-    
+    cretePosition();
 }
 
 
@@ -68,7 +70,38 @@ function enterFrame(){
     }
     
     obj.style.left = px+"px"
-    obj.style.top = py +"px"
+    obj.style.top = py+"px"
 }
 
 window.addEventListener('load', inicial);
+
+/*flores randomicas*/
+
+function cretePosition(){
+    var positions = [];
+    for(let i = 0; i <= numFlower; i++){
+        positions[i] = [(parseInt(Math.random()*480)),(parseInt(Math.random()*510))]
+    }
+}
+
+
+function createFlowers(){
+    var posi = []
+
+    for(var i = 0; i <= numFlower; i++){
+        let gameBack = document.getElementById('gameBack');
+        let newFlower = document.createElement('div');
+        newFlower.classList.add('flower' , 'nVisited');
+        gameBack.appendChild(newFlower);
+
+        var x = (parseInt(Math.random()*480));
+        var y = (parseInt(Math.random()*(510-260)+260));
+
+        newFlower.style.left = x +'px';
+        newFlower.style.top = y +'px';
+        
+        posi[i] = [x,y]
+    }
+
+}
+
