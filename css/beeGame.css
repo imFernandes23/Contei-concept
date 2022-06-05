@@ -71,6 +71,26 @@
     background-image: linear-gradient(180deg,rgb(225, 225, 68), rgb(82, 45, 45));
 }
 
+.bee::after{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: black;
+    left: 12px;
+}
+
+.bee::before{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    background: black;
+    left: 24px;
+    z-index: 2;
+}
+
+
 @keyframes moving {
     0%{
         transform: translateY(4%);
@@ -92,8 +112,8 @@
     background-image: radial-gradient( rgba(252, 16, 16, 0.712) 1%,pink );
     border-radius: 20px;
     z-index: 3;
-    animation:  moving 3s linear infinite;
-    animation: flowerEnter 3s;
+    animation:  moving 3s linear infinite,
+                flowerEnter  linear 3s;
 }
 
 .flower.nVisited::before{
