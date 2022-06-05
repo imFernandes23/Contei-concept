@@ -79,12 +79,22 @@ window.addEventListener('load', inicial);
 
 /*flores randomicas*/
 
-function createFlowers(){
+function createWorld(){
     
-    var x = parseInt((480/(numFlower+1))/2)
-    var y = 0
+    let x = parseInt((480/(numFlower+1))/2)
+    let y = 0
     
-    var gamePlay = document.getElementById('gP');
+    let gamePlay = document.getElementById('gP');
+    let sun = document.getElementById('sun');
+    let cloud = document.getElementById('cloud');
+    let bee = document.getElementById('abelha');
+    let terra = document.getElementById('terrain');
+
+
+    terra.classList.add('terreno')
+    bee.classList.add('bee')
+    sun.classList.add('gameScore')
+    cloud.classList.add('cloud')
     gamePlay.remove()
 
 
@@ -104,6 +114,9 @@ function createFlowers(){
 
         x = x + parseInt(480/(numFlower+1));
     }
+
+
+
 }
 
 function dist(Ax, Ay, Bx, By){
@@ -111,10 +124,12 @@ function dist(Ax, Ay, Bx, By){
     return distancia;
 }
 
-console.log(posi)
 
 function polenRemove(){
-    var test =  document.getElementsByClassName('flower');
+    let test =  document.getElementsByClassName('flower');
+    let point = document.getElementsByClassName('unPoint')
+    
+
     for(let i = 0; i<= numFlower; i++){
         let cpx = px + 20;
         let cpy = py + 20;
@@ -123,6 +138,7 @@ function polenRemove(){
 
         if(dist(cpx,cpy,fpx,fpy) < 20 ){
             test[i].classList.remove('nVisited')
+            point[i].classList.add('point')
         }
     }
     
