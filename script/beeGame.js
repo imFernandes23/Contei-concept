@@ -105,7 +105,7 @@ function createWorld(){
         gameBack.appendChild(newFlower)
 
         /*x = (parseInt(Math.random()*480));*/
-        y = (parseInt(Math.random()*(510-200)+200));
+        y = (parseInt(Math.random()*(480-200)+200));
 
         newFlower.style.left = x +'px';
         newFlower.style.top = y +'px';
