@@ -19,6 +19,7 @@ function inicial(){
     vel = 7;
     obj = document.getElementById('abelha')
     document.addEventListener("keydown",teclaDw);
+
     
     tmp=setInterval(enterFrame,60);
 }
@@ -58,15 +59,19 @@ function enterFrame(){
         px+=dx*vel;
     }else if(px < 0 ){
         px = 0
+        dx = dx*(-1)
     }else{
         px = 510
+        dx = dx*(-1)
     }
     if(py >= 0 && py <= 510){
         py+=dy*vel;
     }else if(py < 0 ){
         py = 0
+        dy = dy*(-1)
     }else{
         py = 510
+        dy = dy*(-1)
     }
     
     obj.style.left = px+"px"
@@ -105,7 +110,7 @@ function createWorld(){
         gameBack.appendChild(newFlower)
 
         /*x = (parseInt(Math.random()*480));*/
-        y = (parseInt(Math.random()*(480-200)+200));
+        y = (parseInt(Math.random()*(480-240)+240));
 
         newFlower.style.left = x +'px';
         newFlower.style.top = y +'px';
