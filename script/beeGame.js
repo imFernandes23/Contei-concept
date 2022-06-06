@@ -4,6 +4,7 @@ var dy;
 var px;
 var py;
 var vel;
+var velFixed
 var obj;
 var tmp;
 var tmp2;
@@ -12,11 +13,12 @@ var posi = []
 
 
 function inicial(){
-    dx = 0;
-    dy = 0;
-    px = 20;
-    py = 20;
-    vel = 7;
+    dx = 0
+    dy = 0
+    px = 20
+    py = 20
+    vel = 8
+    velFixed = 8
     obj = document.getElementById('abelha')
     document.addEventListener("keydown",teclaDw);
 
@@ -29,13 +31,16 @@ function teclaDw(event){
     let tecla = event.key;
     if(tecla === "ArrowLeft"){
         dx = -1;
+        vel = velFixed
     }else if(tecla === "ArrowUp"){
         dy = -1;
-        
+        vel = velFixed
     }else if(tecla === "ArrowRight"){
         dx = 1;
+        vel = velFixed
     }else if(tecla === "ArrowDown"){
         dy = 1;
+        vel = velFixed
     }
 
 }
@@ -60,18 +65,22 @@ function enterFrame(){
     }else if(px < 0 ){
         px = 0
         dx = dx*(-1)
+        vel = vel - 2
     }else{
         px = 510
         dx = dx*(-1)
+        vel = vel -2
     }
     if(py >= 0 && py <= 510){
         py+=dy*vel;
     }else if(py < 0 ){
         py = 0
         dy = dy*(-1)
+        vel = vel - 2
     }else{
         py = 510
         dy = dy*(-1)
+        vel = vel - 2
     }
     
     obj.style.left = px+"px"
