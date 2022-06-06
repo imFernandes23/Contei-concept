@@ -1,7 +1,18 @@
+
+@charset "UTF-8";
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: burbank;
+}
+
+@font-face {
+    font-family: burbank;
+    src: url('../fonts/Burbank Big Condensed Black.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
 }
 
 .gameBackground{
@@ -16,6 +27,35 @@
     text-align: center;
     font-size: 40px;
     overflow: hidden;
+}
+
+.texto{
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    width: 400px;
+    height: 400px;
+    align-items: center;
+    background: rgb(244, 169, 70);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.459);
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    transition: 0.5;
+    animation: textEnter 2s ;
+}
+
+@keyframes textEnter {
+    0%{
+        transform: scale(0);
+    }
+    90%{
+        transform: scale(1.05);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .terreno{
@@ -61,7 +101,7 @@
     position: absolute;
     width: 40px;
     height: 40px;
-    
+    left: 0;
     border-radius: 15px;
     z-index: 90;
     transition: 0.2s;

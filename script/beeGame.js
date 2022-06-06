@@ -9,8 +9,17 @@ var obj;
 var tmp;
 var tmp2;
 var numFlower = parseInt(Math.random() * 10);
-var posi = []
-
+var posi = [[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0],
+[0,0]]
+var resGame = document.getElementById('resGame')
 
 function inicial(){
     dx = 0
@@ -25,7 +34,6 @@ function inicial(){
     
     tmp=setInterval(enterFrame,60);
 }
-
 
 function teclaDw(event){
     let tecla = event.key;
@@ -83,8 +91,8 @@ function enterFrame(){
         vel = vel - 2
     }
     
-    obj.style.left = px+"px"
-    obj.style.top = py+"px"
+    obj.style.left = px+"px";
+    obj.style.top = py+"px";
 
     polenRemove();
 }
@@ -111,7 +119,6 @@ function createWorld(){
     cloud.classList.add('cloud')
     gamePlay.remove()
 
-
     for(let i = 0; i <= numFlower; i++){
         let gameBack = document.getElementById('gameBack')
         let newFlower = document.createElement('div');
@@ -129,8 +136,6 @@ function createWorld(){
         x = x + parseInt(480/(numFlower+1));
     }
 
-
-
 }
 
 function dist(Ax, Ay, Bx, By){
@@ -138,11 +143,10 @@ function dist(Ax, Ay, Bx, By){
     return distancia;
 }
 
-
 function polenRemove(){
     let test =  document.getElementsByClassName('flower');
     let point = document.getElementsByClassName('unPoint')
-    
+    let polen = document.getElementsByClassName('point')
 
     for(let i = 0; i<= numFlower; i++){
         let cpx = px + 20;
@@ -153,8 +157,28 @@ function polenRemove(){
         if(dist(cpx,cpy,fpx,fpy) < 20 ){
             test[i].classList.remove('nVisited')
             point[i].classList.add('point')
-        }
+        }     
     }
-    
+    if(polen.length -1 == numFlower){
+        pergunta();
+    }    
 }
 
+function pergunta(){
+    resGame.classList.add('texto')
+    resGame.innerHTML = 'De quantas flores você coletou o pólen?'
+}
+
+function resposta(){
+    let data = document.getElementById('result').innerHTML
+    let d = parseInt(data)
+    let test = d + numFlower
+    console.log(test)
+    /*if(d == numFlower){
+        resGame.innerHTML = `Parabéns.<br>Você coletou o pólen de ${d} flores.`
+    }else if( d < numFlower){
+        resGame.innerHTML = `Humm...<br> Visitamos um pouco mais que ${d} flores.`
+    }else if( d > numFlower){
+        resGame.innerHTML = `Humm...<br> Visitamos um pouco menos que ${d} flores.`
+    }*/
+}

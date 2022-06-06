@@ -81,6 +81,10 @@
 
     <script type="text/javascript" src="../../../../script/handwriting.canvas.js"></script>
 
+    <script src="../../../../script/beeGame.js"></script>
+
+
+
     <script type="text/javascript" defer="">
         var canvas = new handwriting.Canvas(document.getElementById('canvas'), 3);
         var width = document.getElementById("gambiarra").clientWidth
@@ -89,6 +93,7 @@
         canvas.setCallBack(function(data, err) {
             if (err) throw err;
             else document.getElementById("result").innerHTML = data;
+            resposta();
         });
         canvas.set_Undo_Redo(true, true);
         var penSize = document.getElementById("penSize");
