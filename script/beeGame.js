@@ -5,7 +5,7 @@ var px;
 var py;
 var vel;
 var velFixed
-var obj;
+var obj = document.getElementById('abelha')
 var tmp;
 var tmp2;
 var numFlower = parseInt(Math.random() * 10);
@@ -20,6 +20,9 @@ var posi = [[0,0],
 [0,0],
 [0,0]]
 var resGame = document.getElementById('resGame')
+var text = document.getElementById('txt')
+let numFlores = document.getElementById('numFlowers')
+numFlores.innerHTML = numFlower+1
 
 function inicial(){
     dx = 0
@@ -28,7 +31,7 @@ function inicial(){
     py = 20
     vel = 8
     velFixed = 8
-    obj = document.getElementById('abelha')
+    
     document.addEventListener("keydown",teclaDw);
 
     
@@ -166,19 +169,5 @@ function polenRemove(){
 
 function pergunta(){
     resGame.classList.add('texto')
-    resGame.innerHTML = 'De quantas flores você coletou o pólen?'
-}
-
-function resposta(){
-    let data = document.getElementById('result').innerHTML
-    let d = parseInt(data)
-    let test = d + numFlower
-    console.log(test)
-    /*if(d == numFlower){
-        resGame.innerHTML = `Parabéns.<br>Você coletou o pólen de ${d} flores.`
-    }else if( d < numFlower){
-        resGame.innerHTML = `Humm...<br> Visitamos um pouco mais que ${d} flores.`
-    }else if( d > numFlower){
-        resGame.innerHTML = `Humm...<br> Visitamos um pouco menos que ${d} flores.`
-    }*/
+    text.classList.add("resGametxt")
 }

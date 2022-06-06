@@ -44,7 +44,23 @@
     text-shadow: 2px 2px 2px black;
     transition: 0.5;
     animation: textEnter 2s ;
+    overflow: hidden;
 }
+
+p{
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 101;
+    transform: scale(0);
+    transition: .5s;
+}
+
+.resGametxt{
+    transform: scale(1);
+}
+
+
 
 @keyframes textEnter {
     0%{
@@ -213,7 +229,7 @@
 
 
 .gamePlay{
-    position: relative;
+    position: absolute;
     height: 100px;
     width: 100px;
     border-top : 70px solid transparent;
