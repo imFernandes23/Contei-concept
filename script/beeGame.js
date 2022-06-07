@@ -23,6 +23,11 @@ var resGame = document.getElementById('resGame')
 var text = document.getElementById('txt')
 let numFlores = document.getElementById('numFlowers')
 numFlores.innerHTML = numFlower+1
+var flowersList = ["radial-gradient( rgba(252, 16, 16, 0.712) 1%,pink )",
+                    " radial-gradient( rgba(218, 52, 52, 0.712) 1%,rgb(199, 22, 199) )","radial-gradient( rgba(167, 41, 206, 0.712) 1%,rgb(25, 22, 199) )"
+                ];
+
+
 
 function inicial(){
     dx = 0
@@ -126,6 +131,8 @@ function createWorld(){
         let gameBack = document.getElementById('gameBack')
         let newFlower = document.createElement('div');
         newFlower.classList.add('flower' , 'nVisited' , i)
+        let randomColor = Math.floor(Math.random() * flowersList.length)
+        newFlower.style.backgroundImage = flowersList[randomColor]
         gameBack.appendChild(newFlower)
 
         /*x = (parseInt(Math.random()*480));*/

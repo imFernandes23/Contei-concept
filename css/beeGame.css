@@ -36,22 +36,15 @@
     width: 400px;
     height: 400px;
     align-items: center;
-    /*background: rgb(244, 169, 70);
+    background: rgb(244, 169, 70);
     border-radius: 20px;
     padding: 20px;
-    ;*/
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.459);
     color: white;
     text-shadow: 2px 2px 2px black;
     transition: 0.5;
+    overflow: hidden;
     animation: textEnter 2s ;
-    overflow: hidden;
-    border-radius: 20px;
-    overflow: hidden;
-    border-top-left-radius: 2px solid rgba(255,255,255,0.5);
-    border-left: 2px solid rgba(255,255,255,0.5);
-    backdrop-filter: blur(5px);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 p{
@@ -175,7 +168,7 @@ p{
     width: 60px;
     height: 40px;
     background-image: radial-gradient( rgba(252, 16, 16, 0.712) 1%,pink );
-    border-radius: 20px;
+    border-radius: 51% 49% 48% 52% / 34% 36% 64% 66%;
     z-index: 3;
     animation:  moving 3s linear infinite,
                 flowerEnter  linear 3s;
