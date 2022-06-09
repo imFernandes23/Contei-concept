@@ -1,0 +1,91 @@
+
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: burbank;
+}
+
+@font-face {
+    font-family: burbank;
+    src: url('../fonts/Burbank Big Condensed Black.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+
+.gameBackground{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+    height: 550px;
+    padding: 0;
+    background-image: linear-gradient(0deg,rgb(132, 132, 188),rgb(85, 85, 181));
+    text-align: center;
+    font-size: 40px;
+    overflow: hidden;
+}
+
+.bloco{
+    background-color: bisque;
+    transition: .5s;
+}
+
+.bloco.pendurado{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    top: 80px;
+    transform-style: preserve-3d;
+    transform-origin: 50% -160%;
+    animation:
+    blockEnter 3s,
+    balanceBlock 5s infinite linear 3s;
+}
+
+.bloco::before{
+    content: ' ';
+    position: absolute;
+    width: 54px;
+    height: 4px;
+    bottom: -4px;
+    left: -2px;
+    background: grey;
+}
+
+.bloco.pendurado::after{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 80px;
+    background: black;
+    top: -80px;
+    left: 23px; 
+}
+
+@keyframes balanceBlock {
+    0%{
+        transform: rotateZ(0deg);
+    }
+    25%{
+        transform: rotateZ(40deg);
+    }
+    75%{
+        transform: rotateZ(-40deg);
+    }
+    100%{
+        transform: rotateZ(0deg);
+    }
+}
+@keyframes blockEnter {
+    0%{
+        transform: translateY(-180px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
