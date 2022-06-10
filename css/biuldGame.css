@@ -32,14 +32,14 @@
 .bloco{
     background-color: bisque;
     transition: .5s;
-}
-
-.bloco.pendurado{
     position: absolute;
     width: 50px;
     height: 50px;
     border-radius: 5px;
     top: 80px;
+}
+
+.bloco.pendurado{
     transform-style: preserve-3d;
     transform-origin: 50% -160%;
     animation:
@@ -88,4 +88,18 @@
     100%{
         transform: translateY(0px);
     }
+}
+
+.gamePlay{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-top : 70px solid transparent;
+    border-left: 110px solid  rgb(244,169, 70);
+    border-bottom: 70px solid transparent;
+    transition: .5s;
+}
+.gamePlay:hover{
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.493));
+    transition: .5s;
 }
