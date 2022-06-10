@@ -9,14 +9,14 @@ var placeXLeft = 0
 var placeXRight = 550
 var posiX; 
 var posiY;
-var velocidade = 10;
+var velocidade = 5;
 var ocorreu;
 var py;
 var px;
 window.addEventListener('load', inicial);
 
 function inicial (){
-    setInterval(enterFrame,60)
+    setInterval(enterFrame,15)
 }
 
 function enterFrame (){
