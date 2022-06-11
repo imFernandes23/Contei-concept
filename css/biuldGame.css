@@ -48,7 +48,7 @@
 .bloco.pendurado::after{
     content: " ";
     position: absolute;
-    width: 4px;
+    width: 2px;
     height: 80px;
     background: black;
     top: -80px;
