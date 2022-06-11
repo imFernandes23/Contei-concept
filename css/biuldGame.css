@@ -42,18 +42,8 @@
     transform-style: preserve-3d;
     transform-origin: 50% -160%;
     animation:
-    blockEnter 3s,
-    balanceBlock 5s infinite linear 3s;
-}
-
-.bloco::before{
-    content: ' ';
-    position: absolute;
-    width: 54px;
-    height: 4px;
-    bottom: -4px;
-    left: -2px;
-    background: grey;
+    balanceBlock 6s infinite linear 2s,
+    blockEnter 2s ease;
 }
 
 .bloco.pendurado::after{
@@ -63,22 +53,27 @@
     height: 80px;
     background: black;
     top: -80px;
-    left: 23px; 
+    left: 23px45
 }
 
 @keyframes balanceBlock {
-    0%{
-        transform: rotateZ(0deg);
-    }
-    25%{
-        transform: rotateZ(40deg);
-    }
-    75%{
-        transform: rotateZ(-40deg);
-    }
-    100%{
-        transform: rotateZ(0deg);
-    }
+
+   0% , 100%{
+    transform: rotate(0deg);
+   }
+   23%{
+    transform: rotate(45deg);
+   }
+   27%{
+    transform: rotate(45deg);
+   }
+  
+   73%{
+    transform: rotate(-45deg);
+   }
+   77%{
+    transform: rotate(-45deg);
+   }
 }
 @keyframes blockEnter {
     0%{
