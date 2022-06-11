@@ -30,7 +30,6 @@
 }
 
 .bloco{
-    background-color: bisque;
     position: absolute;
     width: 50px;
     height: 50px;
@@ -54,6 +53,41 @@
     background: black;
     top: -80px;
     left: 23px45
+}
+
+.blockFallRight{
+    animation: fallRight 3s infinite;
+}
+
+@keyframes fallRight{
+    0%, 100%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(120deg);
+    }
+    66%{
+        transform: rotate(240deg);
+    }
+
+}
+
+
+.blockFallLeft{
+    animation: fallLeft 3s infinite;
+}
+
+@keyframes fallLeft{
+    0%, 100%{
+        transform: rotate(0deg);
+    }
+    33%{
+        transform: rotate(-120deg);
+    }
+    66%{
+        transform: rotate(-240deg);
+    }
+
 }
 
 @keyframes balanceBlock {
