@@ -131,3 +131,153 @@
     filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.493));
     transition: .5s;
 }
+
+
+.texto{
+    display: flex;
+    position: absolute;
+    z-index: 100;
+    width: 300px;
+    height: 150px;
+    align-items: center;
+    background: rgb(244, 169, 70);
+    border-radius: 20px;
+    top: 10px;
+    padding: 20px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.459);
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    transition: 0.5;
+    overflow: hidden;
+    animation: textEnter 2s ;
+}
+
+p{
+    position: relative;
+    display: block;
+    text-align: center;
+    z-index: 101;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(0);
+    transition: .5s;
+}
+
+.resGametxt{
+    transform: scale(1);
+}
+
+
+
+@keyframes textEnter {
+    0%{
+        transform: scale(0) ;
+    }
+    90%{
+        transform: scale(1.05) ;
+    }
+    100%{
+        transform: scale(1) ;
+    }
+}
+
+
+.cloud{
+    position: absolute;
+    width: 550px;
+    height: 200px;
+    background: transparent;
+    top: 70px;
+    left: 500px;
+    animation: clouds 20s infinite linear;
+}
+
+.cloud > .cloud1{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: 130px
+}
+
+.cloud > .cloud2{
+    position: absolute;
+    width: 170px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: 60px;
+    left: 150px;
+}
+
+.cloud > .cloud2 > .sCloud1{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: -40px;
+    left: 40px;
+}
+
+.cloud > .cloud2 > .sCloud2{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: 40px;
+    left: 60px;
+}
+
+.cloud > .cloud3{
+    position: absolute;
+    width: 130px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: 60px;
+    left: 380px;
+}
+.cloud > .cloud3 > .sCloud1{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    top: 40px;
+    left: 60px;
+}
+
+@keyframes clouds{
+    0%{
+        left: 550px;
+    }
+    100%{
+        left: -550px;
+    }
+}
+.gameScore{
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background-image: radial-gradient(yellow,rgb(255, 138, 5));
+    border-radius: 50%;
+    top: -40px;
+    left: 400px;
+    display: flex;
+    box-shadow: 0 0 10px rgb(255, 138, 5),
+                0 0 20px rgb(255, 138, 5),
+                0 0 40px rgb(255, 138, 5);
+    animation: sunEnter 3s;
+}
+
+@keyframes sunEnter{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translate(0);
+    }
+}

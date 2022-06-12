@@ -21,7 +21,7 @@ var posi = [[0,0],
 [0,0]]
 var resGame = document.getElementById('resGame')
 var text = document.getElementById('txt')
-let numFlores = document.getElementById('numFlowers')
+let numFlores = document.getElementById('reGame')
 numFlores.innerHTML = numFlower+1
 var flowersList = ["radial-gradient( rgba(252, 16, 16, 0.712) 1%,pink )",
                     " radial-gradient( rgba(218, 52, 52, 0.712) 1%,rgb(199, 22, 199) )","radial-gradient( rgba(167, 41, 206, 0.712) 1%,rgb(25, 22, 199) )"
