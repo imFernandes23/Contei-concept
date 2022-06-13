@@ -138,6 +138,14 @@ function create(){
 
     let sun = document.getElementById('sun');
     let cloud = document.getElementById('cloud');
+    let terr = document.getElementsByClassName('terra')[0]
+    let tree = document.getElementsByClassName('tree')[0]
+    let tree1 = document.getElementsByClassName('tree')[1]
+
+
+    terr.classList.add('surge')
+    tree.classList.add('surge')
+    tree1.classList.add('surge')
     sun.classList.add('gameScore')
     cloud.classList.add('cloud')
     gamePlay.remove();

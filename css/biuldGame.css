@@ -281,3 +281,70 @@ p{
         transform: translate(0);
     }
 }
+
+.surge.terra{
+    width: 550px;
+    height: 10px;
+    position: absolute;
+    background: gray;
+    bottom: 0px;
+    animation: terraEnter 1s;
+}
+@keyframes terraEnter{
+    0%{
+        bottom: -10px;
+    }
+    100%{
+        bottom: 0px;
+    }
+}
+
+.surge.tree{
+    width: 40px;
+    height: 120px;
+    border-radius: 20px;
+    background-color: green;
+    position: absolute;
+    transform-origin: bottom;
+    animation: treeEnter 2s,
+                treeMove 3s linear infinite 3s;
+}
+
+.surge.tree::after{
+    content:  " ";
+    width: 10px;
+    height: 20px;
+    background-color: rgb(201, 105, 26);
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+}
+
+.surge.tree.left{
+    left: 100px;
+    bottom: 20px;
+}
+
+.surge.tree.right{
+    left: 400px;
+    bottom: 20px;
+}
+
+@keyframes treeEnter{
+    0%{
+        bottom: -140px;
+    }
+    100%{
+        bottom: 20px;
+    }
+}
+
+@keyframes treeMove{
+    0%, 100%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        transform: rotate(-5deg);
+    }
+}
