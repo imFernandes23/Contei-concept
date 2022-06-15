@@ -1,4 +1,3 @@
-
 function resposta(){
     const iframe = document.getElementsByClassName('beeGameIframe')[0]
     const iWindow = iframe.contentWindow;

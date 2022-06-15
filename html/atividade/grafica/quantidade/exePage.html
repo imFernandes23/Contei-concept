@@ -22,13 +22,17 @@
             <img src="../../../../icons/arrowback_111142.png" alt="">
         </a>
 
-        <h2 id="questNumber">Questão 1/10</h2>
+        <h2 id="questNumber"></h2>
+
+        <div class="btn next" onclick="next()">
+            <img src="../../../../icons/arrow_right_icon_128385.png" alt="">
+        </div>
 
     </header>
     <main>
         <div class="game">  <!-- substitutuir pelo iframe do game-->
 
-            <iframe src="beeGame.html" frameborder="0" width="550px" height="550px" scrolling="no" overflow="hidden" class="beeGameIframe" id="bGame" name="beeGameIframe"></iframe>
+            <iframe  frameborder="0" width="550px" height="550px" scrolling="no" overflow="hidden" id="iframeGame" ></iframe>
 
         </div>
             
@@ -38,8 +42,7 @@
             <div class="circle"></div>
             <ion-icon class="helpIcon" name="help"></ion-icon>
             <h2>Ajuda</h2>
-            <p class="questHelp"> 
-                Ajude a abelha a coletar o pólen de todas as flores, use as teclas direcionais &larr;, &uarr;, &rarr; e &darr; para mover a abelha, e depois escreva o número de flores que você visitou no quadro à direita.</p>
+            <p class="questHelp" id="questHelpId"> </p>
         </div>
 
         <div id="quadro">
@@ -104,7 +107,7 @@
         }
     </script>
 
-    <script src="../../../../script/exercicio-grafica-quantidade.js"></script>
+    <script src="../../../../script/exeGame.js"></script>
     
 </body>
 </html>

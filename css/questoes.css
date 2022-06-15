@@ -26,7 +26,6 @@ header > a img{
     background: rgba(255,255,255,0.1);
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     cursor: pointer;
     transition: .5s;
     border-radius: 20px;
@@ -38,18 +37,57 @@ header > a img{
     z-index: 1;
 }
 
+.btn.next{
+    position: absolute;
+    right: 20px;
+    z-index: 1;
+    background: rgba(255,255,255,0.1);
+    height: 60px;
+    width: 60px;
+    padding: 10px;
+    margin: 30px;
+    background: rgba(255,255,255,0.1);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .5s;
+    border-radius: 20px;
+    overflow: hidden;
+    border-top-left-radius: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.next > img{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    left: 4px;
+    top: 5px;
+}
+
+.btn.next:hover{
+    transform: scale(1.1);
+}
+
+
 #questNumber{
-    position: relative;
+    position: absolute;
     margin-top: 50px;
-    left: 30vw;
+    left: 40vw;
     font-size: 40px;
     z-index: 900;
+    color: white;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.797);
 }
 main{
     position: relative;
     display: flex;
     justify-content: center;
     width: 100vw;
+    flex-wrap: wrap;
     margin-top: -20px;
 }
 
