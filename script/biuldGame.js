@@ -42,7 +42,7 @@ function enterFrame (){
             nowBlock = nowBlock + 1;
             createBlock();
             ocorreu = 0 
-            cont = cont + 1         
+                   
         }
 
     }
@@ -123,6 +123,7 @@ function teclaDw(event){
             ocorreu = 3
             
         }else{
+            cont = cont + 1
             console.log('bloco fixou')
             placeY = placeY - 50
             placeXLeft = coordenadas.x

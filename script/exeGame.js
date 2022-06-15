@@ -29,17 +29,18 @@ function games(loc){
 }
 
 function help(questao){
+    let txt
     switch(questao){
+        
         case 1:
-           let beeGame = 'Ajude a abelha a coletar o pólen de todas as flores, use as teclas direcionais &larr;, &uarr;, &rarr; e &darr; para mover a abelha, e depois escreva o número de flores que você visitou no quadro à direita.' 
-           return beeGame
+           txt = 'Ajude a abelha a coletar o pólen de todas as flores, use as teclas direcionais &larr;, &uarr;, &rarr; e &darr; para mover a abelha, e depois escreva o número de flores que você visitou no quadro à direita.' 
         break;
         case 2:
-            let biuldGame = 'Vamos construir.<br>Use a tecla &darr; para soltar os blocos, após terminar de construir o edifícil escreva o número de andares do nosso prédio, no quadro ao lado.'
-            return biuldGame
+            txt = 'Vamos construir.<br>Use a tecla &darr; para soltar os blocos, após terminar de construir o edifícil escreva o número de andares do nosso prédio, no quadro ao lado.'
         break;
         default:
     }
+    return txt;
 }
 
 
@@ -55,17 +56,55 @@ function resposta(){
     console.log(test)
 
     if(parseInt(handwriten) == parseInt(reGame)){
-        res.innerHTML = `Parabéns.<br>Visitamos ${reGame} flores.`
+        res.innerHTML = resGames(gameAtual, 1, handwriten, reGame)
     }else if(parseInt(handwriten) > parseInt(reGame)){
-        res.innerHTML = `Humm...<br>Visitamos um pouco menos que ${handwriten} flores.`
+        res.innerHTML = resGames(gameAtual, 2, handwriten, reGame)
     }else if(parseInt(handwriten) < parseInt(reGame)){
-        res.innerHTML = `Humm...<br>Visitamos um pouco mais que ${handwriten} flores.`
+        res.innerHTML = resGames(gameAtual, 3, handwriten, reGame)
     }else{
-        res.innerHTML = `Não entendi<br>Pode escrever de novo?`
+        res.innerHTML = resGames(gameAtual, 4, handwriten, reGame)
     }
 }
 
-function resGames(values, eventos){
-
+function resGames(game, eventos , handwriten, reGame){
+    let txt;
+    switch(game){
+        case 'beeGame':
+            switch(eventos){
+                case 1:
+                    txt =  `Parabéns.<br>Visitamos ${reGame} flor(es).`
+                break;
+                case 2:
+                    txt =  `Humm...<br>Visitamos um pouco menos que ${handwriten} flor(es).`
+                break;
+                case 3:
+                    txt = `Humm...<br>Visitamos um pouco mais que ${handwriten} flo(res).`
+                break;
+                case 4:
+                    txt = `Não entendi.<br>Pode escrever de novo?`
+                break;
+                default:
+                }
+        break;  
+        case "biuldGame":
+            switch(eventos){
+                case 1:
+                    txt =  `Parabéns.<br>Nosso prédio tem ${reGame} andar(es).`
+                break;
+                case 2:
+                    txt =  `Humm...<br>Nosso prédio tem um  pouco menos que ${handwriten} andar(es).`
+                break;
+                case 3:
+                    txt = `Humm...<br>Nosso prédio tem um pouco mais que ${handwriten} andar(es).`
+                break;
+                case 4:
+                    txt = `Não entendi.<br>Pode escrever de novo?`
+                break;
+                default:
+                }
+        break;        
+        default:
+    }
+    return txt
 }
 window.addEventListener('DOMContentLoaded', next)
