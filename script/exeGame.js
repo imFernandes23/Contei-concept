@@ -1,5 +1,6 @@
 let questao = 1
-let arrayTry = []
+let intervalo = 1
+var arrayTry = ['inicio']
 let gameAtual 
 
 function  next(){
@@ -19,7 +20,6 @@ function  next(){
         
     }
     
-    questao++
 }
 
 
@@ -51,16 +51,24 @@ function resposta(){
     const reGame = iDocument.getElementById('reGame').innerHTML;
     const res = iDocument.getElementById('txt')
     const handwriten = document.getElementById('result').innerHTML;
-    const test = parseInt(reGame)+parseInt(handwriten);
-
-    console.log(test)
+    var arrayTry = ['inicial', 0, 0]
+    let point = 0
 
     if(parseInt(handwriten) == parseInt(reGame)){
         res.innerHTML = resGames(gameAtual, 1, handwriten, reGame)
+        if(questao == intervalo){
+                questao++
+        }
     }else if(parseInt(handwriten) > parseInt(reGame)){
         res.innerHTML = resGames(gameAtual, 2, handwriten, reGame)
+        if(questao == intervalo){
+            
+        }
     }else if(parseInt(handwriten) < parseInt(reGame)){
         res.innerHTML = resGames(gameAtual, 3, handwriten, reGame)
+        if(questao == intervalo){
+            
+        }
     }else{
         res.innerHTML = resGames(gameAtual, 4, handwriten, reGame)
     }

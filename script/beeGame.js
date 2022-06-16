@@ -8,7 +8,7 @@ var velFixed
 var obj = document.getElementById('abelha')
 var tmp;
 var tmp2;
-var numFlower = parseInt(Math.random() * 10);
+var numFlower = parseInt(Math.random() * 8);
 var posi = [[0,0],
 [0,0],
 [0,0],

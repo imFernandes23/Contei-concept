@@ -1,7 +1,7 @@
 // variaveis
 
 var tmp
-var numBlocks = parseInt(Math.random()*8);
+var numBlocks = parseInt(Math.random()*7);
 var nowBlock = 0
 var placeY = 550
 var placeXLeft = 0

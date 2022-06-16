@@ -137,8 +137,8 @@
     display: flex;
     position: absolute;
     z-index: 100;
-    width: 300px;
-    height: 150px;
+    width: 400px;
+    height: 200px;
     align-items: center;
     background: rgb(244, 169, 70);
     border-radius: 20px;
