@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@font-face {
+    font-family: burbank;
+    src: url('../fonts/Burbank Big Condensed Black.ttf') format('truetype');
+    font-weight: normal;
+    font-size: normal;
+}
+*{
+    margin: 0;
+    padding: 0 ;
+    box-sizing: border-box;
+    font-family: burbank,Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: #f1f1f1;
+    display: flex;
+    color: white;
+    font-size: 2em;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.quadroAtividade.active{
+    position: absolute;
+    width: 600px;
+    height: 450px;
+    background-color: rgb(244,191, 70);
+    margin-left: calc(50% - 300px);
+    justify-self: center;
+    align-self: center;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.556);
+    padding: 10px;
+    transition: 0.5s;
+    overflow: hidden;
+    transform-origin: center;
+}
+p{
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.eixoY{
+    position: absolute;
+    height: 300px;
+    width: 5px;
+    background-color: white;
+    left: 50px;
+    top: 50px;
+    border-radius: 2px;
+    transform-origin: bottom;
+    transition: .5s;
+}
+
+.eixoX{
+    position: absolute;
+    height: 5px;
+    width: 500px;
+    background-color: white;
+    left: 40px;
+    top: 335px;
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+.barras{
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    top: 85px;
+    left: 75px;
+}
+
+.questaotry{
+    position: relative;
+    width: 40px;
+    height: 250px;
+    background-image: linear-gradient(45deg,blue, lightBlue);
+    z-index: 100;
+    border-radius:  0 10px 0 0;
+    transition: .5s;
+    transform-origin: bottom;
+    overflow: hidden;
+    box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.226);
+}
+
+.questaotry::after{
+    content: '4';
+    position: absolute;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.449);
+    margin: 5px 5px;
+}
+.questaotry::before{
+    content: "1";
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.449);
+    margin: 5px 5px;
+}
+
+#obsTxt{
+    position: absolute;
+    bottom: 70px;
+    left: 40px;
+    font-size: 23px;
+}
+
+#obs{
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    width: 300px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    font-size: 18px;
+    overflow: scroll;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+#concluir{
+    position: absolute;
+    bottom: 30px;
+    right: 170px;
+    height: 30px;
+    width: 70px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+    background-color: rgb(244,140, 70);
+    color: white;
+    transition: .5s;
+    transform-origin: center;
+}
+
+#concluir:hover{
+    background: white;
+    color: rgb(244,140, 70);
+    transform: translateY(-5px);
+}
