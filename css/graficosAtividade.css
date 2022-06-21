@@ -22,7 +22,7 @@ body{
     height: 100vh;
 }
 
-.quadroAtividade.active{
+.quadroAtividade{
     position: absolute;
     width: 600px;
     height: 450px;
@@ -36,36 +36,78 @@ body{
     transition: 0.5s;
     overflow: hidden;
     transform-origin: center;
+    transform: scale(1);
+    z-index: 1;
+    
+}
+.quadroAtividade.active{
+    animation: quadroAtividadeEnter 3s;
+    transform: scale(1);
+}
+
+@keyframes quadroAtividadeEnter {
+    0%{
+        transform: scale(0);
+    }
 }
 p{
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.eixoY{
+.active > .atividadeGrafico > .eixoY{
     position: absolute;
-    height: 300px;
+    height:300px;
     width: 5px;
-    background-color: white;
     left: 50px;
     top: 50px;
     border-radius: 2px;
     transform-origin: bottom;
     transition: .5s;
+    animation: 2s eixoYEnter 2s forwards;
+    background-color: white;
+    opacity: 0;
 }
 
-.eixoX{
+.active > .atividadeGrafico > .eixoX{
     position: absolute;
     height: 5px;
     width: 500px;
-    background-color: white;
     left: 40px;
     top: 335px;
+    background-color: white;
     transform-origin: left;
     transition: 0.5s;
+    animation: 2s eixoXEnter 2s forwards;
+    opacity: 0;
+    
 }
 
-.barras{
+@keyframes eixoYEnter{
+    0%{
+        transform: scaleY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scaleY(1);
+        opacity: 1;
+        
+    }
+}
+
+
+@keyframes eixoXEnter{
+    0%{
+        transform: scaleX(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scaleX(1);
+        opacity: 1;
+        
+    }
+}
+.active > .atividadeGrafico > .barras{
     position: absolute;
     display: flex;
     gap: 5px;
@@ -73,7 +115,7 @@ p{
     left: 75px;
 }
 
-.questaotry{
+.active > .atividadeGrafico > .barras > .questaotry{
     position: relative;
     width: 40px;
     height: 250px;
@@ -84,15 +126,59 @@ p{
     transform-origin: bottom;
     overflow: hidden;
     box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.226);
+    opacity: 0;
+    animation: 1s questaoTryEnter forwards;
 }
 
-.questaotry::after{
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(1){
+    animation-delay: 4s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(2){
+    animation-delay: 4.5s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(3){
+    animation-delay: 5s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(4){
+    animation-delay: 5.5s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(5){
+    animation-delay: 6s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(6){
+    animation-delay: 6.5s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(7){
+    animation-delay: 7s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(8){
+    animation-delay: 7.5s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(9){
+    animation-delay: 8s;
+}
+.active > .atividadeGrafico > .barras > .questaotry:nth-child(10){
+    animation-delay: 8.5s;
+}
+
+@keyframes questaoTryEnter {
+    0%{
+        transform: scaleY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+.active > .atividadeGrafico > .barras > .questaotry::after{
     content: '4';
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.449);
     margin: 5px 5px;
 }
-.questaotry::before{
+.active > .atividadeGrafico > .barras > .questaotry::before{
     content: "1";
     bottom: 0px;
     right: 0px;
@@ -134,6 +220,9 @@ p{
     color: white;
     transition: .5s;
     transform-origin: center;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 5px;
 }
 
 #concluir:hover{
@@ -141,3 +230,4 @@ p{
     color: rgb(244,140, 70);
     transform: translateY(-5px);
 }
+
