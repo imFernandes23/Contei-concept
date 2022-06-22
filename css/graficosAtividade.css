@@ -231,3 +231,7 @@ p{
     transform: translateY(-5px);
 }
 
+#concluir:active{
+    transform: scale(0.9);
+}
+

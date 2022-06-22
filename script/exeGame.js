@@ -1,6 +1,7 @@
 let questao = 1
 let intervalo = 1
 var arrayTry = ['inicio',0,0,0,0,0,0,0,0,0,0]
+var arrayRes = ['inicio',0,0,0,0,0,0,0,0,0,0]
 let gameAtual 
 
 function  next(){
@@ -55,10 +56,13 @@ function resposta(){
     if(parseInt(handwriten) == parseInt(reGame)){
         res.innerHTML = resGames(gameAtual, 1, handwriten, reGame)
         if(questao == intervalo){
-            arrayTry[intervalo]++
-            intervalo++
-            if( questao < 9){
+            arrayTry[intervalo]++;
+            arrayRes[intervalo] = parseInt(reGame);
+            intervalo++;
+            if( questao < 2){
                 questao++
+            }else{
+                saveArrays(arrayTry,arrayRes)
             }
         }
     }else if(parseInt(handwriten) > parseInt(reGame)){
@@ -76,6 +80,7 @@ function resposta(){
     }
 
     console.log(arrayTry)
+    console.log(arrayRes)
 }
 
 
@@ -120,4 +125,14 @@ function resGames(game, eventos , handwriten, reGame){
     }
     return txt
 }
+
+function saveArrays(array1, array2){
+    const saveArray = [array1, array2]
+
+    localStorage.setItem('itens', JSON.stringify(saveArray))
+
+    const itens = JSON.parse(localStorage.getItem('itens'))
+    console.log(itens)
+}
+
 window.addEventListener('DOMContentLoaded', next)
