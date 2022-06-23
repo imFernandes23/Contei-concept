@@ -1,7 +1,7 @@
 let questao = 1
 let intervalo = 1
-var arrayTry = ['inicio',0,0,0,0,0,0,0,0,0,0]
-var arrayRes = ['inicio',0,0,0,0,0,0,0,0,0,0]
+var arrayTry = [0,0,0,0,0,0,0,0,0,0,0]
+var arrayRes = [0,0,0,0,0,0,0,0,0,0,0]
 let gameAtual 
 
 function  next(){
@@ -59,10 +59,11 @@ function resposta(){
             arrayTry[intervalo]++;
             arrayRes[intervalo] = parseInt(reGame);
             intervalo++;
-            if( questao < 9){
+            if( questao < 9){  //numero de questoês
                 questao++
             }else{
                 saveArrays(arrayTry,arrayRes)
+                const link = document.getElementById('next').href = '../../../graficosAtividade.html'
             }
         }
     }else if(parseInt(handwriten) > parseInt(reGame)){
@@ -78,9 +79,6 @@ function resposta(){
     }else{
         res.innerHTML = resGames(gameAtual, 4, handwriten, reGame)
     }
-
-    console.log(arrayTry)
-    console.log(arrayRes)
 }
 
 
@@ -129,10 +127,7 @@ function resGames(game, eventos , handwriten, reGame){
 function saveArrays(array1, array2){
     const saveArray = [array1, array2]
 
-    localStorage.setItem('itens', JSON.stringify(saveArray))
-
-    const itens = JSON.parse(localStorage.getItem('itens'))
-    console.log(itens)
+    localStorage.setItem('objeto', JSON.stringify(saveArray))
 }
 
 window.addEventListener('DOMContentLoaded', next)

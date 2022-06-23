@@ -25,7 +25,7 @@ body{
     position: absolute;
     width: 600px;
     height: 450px;
-    background-color: rgb(244,191, 70);
+    background-color: rgb(244, 169, 70);
     margin-left: calc(50% - 300px);
     justify-self: center;
     align-self: center;
@@ -150,24 +150,27 @@ p{
 .active > .atividadeGrafico > .barras{
     position: absolute;
     display: flex;
+    align-items: baseline;
     gap: 5px;
     top: 85px;
     left: 75px;
+
 }
 
 .active > .atividadeGrafico > .barras > .questaotry{
-    position: relative;
     width: 40px;
-    height: 250px;
+    transform-origin: bottom;
+    margin-bottom: 0;
     background-image: linear-gradient(45deg,blue, lightBlue);
     z-index: 100;
     border-radius:  0 10px 0 0;
     transition: .5s;
-    transform-origin: bottom;
+    bottom: 0px ;
     overflow: hidden;
     box-shadow: 2px -2px 4px rgba(0, 0, 0, 0.226);
     opacity: 0;
     animation: 1s questaoTryEnter forwards;
+    overflow: hidden;
 }
 
 .active > .atividadeGrafico > .barras > .questaotry:nth-child(1){
@@ -212,19 +215,20 @@ p{
     }
 }
 
-.active > .atividadeGrafico > .barras > .questaotry::after{
-    content: '4';
+.active > .atividadeGrafico > .barras > .questaotry > .tentativas{
+    display: block;
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.449);
     margin: 5px 5px;
+    font-size: 20px;
 }
-.active > .atividadeGrafico > .barras > .questaotry::before{
-    content: "1";
+.active > .atividadeGrafico > .barras > .questaotry > .respostas{
     bottom: 0px;
     right: 0px;
     position: absolute;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.449);
     margin: 5px 5px;
+    font-size: 20px;
 }
 
 #obsTxt{
