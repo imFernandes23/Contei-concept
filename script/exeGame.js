@@ -59,7 +59,7 @@ function resposta(){
             arrayTry[intervalo]++;
             arrayRes[intervalo] = parseInt(reGame);
             intervalo++;
-            if( questao < 2){
+            if( questao < 9){
                 questao++
             }else{
                 saveArrays(arrayTry,arrayRes)
