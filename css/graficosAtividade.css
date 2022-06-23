@@ -16,7 +16,6 @@ body{
     background-color: #f1f1f1;
     display: flex;
     color: white;
-    font-size: 2em;
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -52,6 +51,7 @@ body{
 }
 p{
     text-align: center;
+    font-size: 2em;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -107,6 +107,46 @@ p{
         
     }
 }
+
+#resp, #tent{
+    position: absolute;
+    font-size: 20px;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.514);
+    transition: .5s;
+}
+
+#resp{
+    bottom: 85px;
+    right: -80px;
+    animation: 1s respEnter 9.5s forwards;
+    
+}
+
+@keyframes respEnter {
+    0%{
+        right: -50px;
+    }
+    100%{
+        right: 60px;
+    }
+}
+
+#tent{
+    left: 600px;
+    top: 50px;
+    animation: 1s tentEnter 10.5s forwards;
+}
+
+@keyframes tentEnter{
+    0%{
+        left: 600px;
+    }
+    100%{
+        left: 60px;
+    }
+}
+
+
 .active > .atividadeGrafico > .barras{
     position: absolute;
     display: flex;
@@ -234,4 +274,6 @@ p{
 #concluir:active{
     transform: scale(0.9);
 }
+
+
 
