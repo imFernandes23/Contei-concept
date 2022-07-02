@@ -32,7 +32,7 @@ function finish (){
     const saveResults = JSON.parse(localStorage.getItem('objeto'))
     const text = document.getElementById('obs').value
     const data = new Date();
-    const dataFull = data.getDate() +"-"+ data.getMonth()+"-"+data.getFullYear()
+    const dataFull = data.getDate() +"-"+ (data.getMonth()+1)+"-"+data.getFullYear()
     const hour = data.getHours()+":"+ data.getMinutes()
 
 
