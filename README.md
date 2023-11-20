@@ -33,5 +33,10 @@ Este Projeto foi realizado na discliplina de projetos 3 no curso de engenharia d
     - Arthur Paes
     - Eduardo Fernandes
 
+# Tecnologias
+    - HTML5
+    - CSS3
+    - JavaScript
+
 
 <p>Este projeto está online no meu github pages, para acessar clique <a href="https://imFernandes23.github.io/Contei-concept/html/index.html">aqui</a>.</p>
