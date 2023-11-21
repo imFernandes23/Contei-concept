@@ -14,11 +14,13 @@
 
 Por se tratar de um prototipo apenas para ilustração e apresentação da ideia, o contei conta apenas com 2 dois MiniGames desenvolvidos usando JavaScript, que estimulam a contagem de elementos na tela, o usuário deverá escrever o elemento no quandro ao lado, que será interpretado por uma Inteligencia Artificial que parabenizará o usuário caso acerte, ou dará dicas caso erre, ambos os jogos relacionados à discalculia gráfica.
 
-<img src="image/mini-tela1.png">
-Mova a abelha com as teclas de seta para colher os pólem das flores.
 
-<img src="image/mini-tela3.png">
-Ou construa um prédio sem derrubar os blocos.
+![Bee Game](image/mini-tela1.png)
+*Mova a abelha com as teclas de seta para colher os pólem das flores.*
+
+![Biuld Game](image/mini-tela3.png)
+*Ou construa um prédio sem derrubar os blocos.*
+
 
 
 # Objetivo
